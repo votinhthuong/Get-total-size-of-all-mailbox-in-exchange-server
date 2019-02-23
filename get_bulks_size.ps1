@@ -1,0 +1,1 @@
+Get-Mailbox | Get-MailboxStatistics | Add-Member -MemberType ScriptProperty -Name TotalItemSizeinMB -Value {$this.totalitemsize.value.ToMB()} -PassThru | select-object DisplayName, TotalItem* | Export-csv C:\allMailboxSize.csv -NoTypeInformation
